@@ -1,0 +1,25 @@
+From 1f1079b879c29298353c76f1e4f0082a8c306d9d Mon Sep 17 00:00:00 2001
+From: Joris Offouga <offougajoris@gmail.com>
+Date: Fri, 16 Aug 2019 19:15:48 +0200
+Subject: [PATCH 2/2] stm32mp1: Enable redundant environment
+
+Signed-off-by: Joris Offouga <offougajoris@gmail.com>
+---
+ include/configs/stm32mp1.h | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/include/configs/stm32mp1.h b/include/configs/stm32mp1.h
+index d7ca94e..a1e5513 100644
+--- a/include/configs/stm32mp1.h
++++ b/include/configs/stm32mp1.h
+@@ -75,6 +75,7 @@
+ #ifdef CONFIG_ENV_IS_IN_MMC
+ #define CONFIG_ENV_SECT_SIZE 0x40000
+ #define CONFIG_ENV_OFFSET 0x280000
++#define CONFIG_ENV_OFFSET_REDUND 0x300000
+ #endif
+ 
+ /* NAND support */
+-- 
+2.7.4
+
