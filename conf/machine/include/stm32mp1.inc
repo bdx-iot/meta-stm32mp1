@@ -1,3 +1,5 @@
+require conf/machine/include/soc-family.inc
+
 DEFAULTTUNE = "cortexa7thf-neon-vfpv4"
 
 SOC_FAMILY = "stm32mp1"
