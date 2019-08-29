@@ -8,7 +8,7 @@ DEPENDS += "bison-native"
 
 SRC_URI = " \
 	git://gitlab.denx.de/u-boot/u-boot.git;protocol=https \
-	file://0001-remove-usb-power.patch \
+	file://0001-stm32mp1-Disable-ADC.patch \
 	file://0001-stm32mp1-Replace-ENV_IS_EXT4-to-MMC.patch \
 	file://0002-stm32mp1-Enable-redundant-environment.patch \
 "
