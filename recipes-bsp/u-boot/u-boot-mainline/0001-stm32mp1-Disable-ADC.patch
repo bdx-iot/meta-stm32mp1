@@ -1,29 +1,18 @@
-From 8575a54cfe6396099e91666ae5e530a12ec0638a Mon Sep 17 00:00:00 2001
-From: Joris Offouga <offougajoris@gmail.com>
-Date: Thu, 29 Aug 2019 18:04:44 +0200
+From ed4ac631b4b498c3cd27cc9b3d8601b9ade8bee7 Mon Sep 17 00:00:00 2001
+From: Pierre-Jean Texier <pjtexier@koncepto.io>
+Date: Thu, 3 Oct 2019 21:29:54 +0200
 Subject: [PATCH] stm32mp1: Disable ADC
 
 Signed-off-by: Joris Offouga <offougajoris@gmail.com>
+Signed-off-by: Pierre-Jean Texier <pjtexier@koncepto.io>
 ---
- configs/stm32mp15_basic_defconfig | 5 ++---
- 1 file changed, 2 insertions(+), 3 deletions(-)
+ configs/stm32mp15_basic_defconfig | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
 diff --git a/configs/stm32mp15_basic_defconfig b/configs/stm32mp15_basic_defconfig
-index 09785b5dc1..bcc17a6f59 100644
+index f6c68fe..bcc17a6 100644
 --- a/configs/stm32mp15_basic_defconfig
 +++ b/configs/stm32mp15_basic_defconfig
-@@ -7,10 +7,10 @@ CONFIG_TARGET_STM32MP1=y
- CONFIG_SPL_SPI_FLASH_SUPPORT=y
- CONFIG_SPL_SPI_SUPPORT=y
- # CONFIG_ARMV7_VIRT is not set
-+CONFIG_SPL_TEXT_BASE=0x2FFC2500
- CONFIG_DISTRO_DEFAULTS=y
- CONFIG_FIT=y
- CONFIG_BOOTCOMMAND="run bootcmd_stm32mp"
--CONFIG_SPL_TEXT_BASE=0x2FFC2500
- CONFIG_SYS_MMCSD_RAW_MODE_U_BOOT_USE_PARTITION=y
- CONFIG_SYS_MMCSD_RAW_MODE_U_BOOT_PARTITION=3
- CONFIG_SPL_I2C_SUPPORT=y
 @@ -26,7 +26,6 @@ CONFIG_SYS_PROMPT="STM32MP> "
  # CONFIG_CMD_IMPORTENV is not set
  CONFIG_CMD_MEMINFO=y
@@ -49,5 +38,5 @@ index 09785b5dc1..bcc17a6f59 100644
  CONFIG_DM_REGULATOR_GPIO=y
  CONFIG_DM_REGULATOR_STM32_VREFBUF=y
 -- 
-2.17.1
+2.7.4
 
