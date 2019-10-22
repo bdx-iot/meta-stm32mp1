@@ -1,11 +1,5 @@
-require recipes-bsp/u-boot/u-boot.inc
 require u-boot-stm-common.inc
 
-DESCRIPTION = "U-Boot Mainline to test stm32mp1"
+SRCREV = "61ba1244b548463dbfb3c5285b6b22e7c772c5bd"
 
-DEPENDS_append = " bc-native dtc-native"
-
-PROVIDES += "u-boot"
-
-PACKAGE_ARCH = "${MACHINE_ARCH}"
-COMPATIBLE_MACHINE = "(stm*)"
+PV = "v2019.10"
