@@ -1,7 +1,5 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
-SRCREV_stm32mp1 = "511646b8ac5c82f210b16920044465756913d238"
-
 SRC_URI_append = " \
 	file://eth.network \
 "
