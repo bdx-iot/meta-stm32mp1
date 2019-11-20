@@ -11,7 +11,7 @@ repos:
 
   poky:
     url: https://git.yoctoproject.org/git/poky
-    refspec: 01b8a8b54bc569e5ef3f5e6fc6abcee365ab25d9
+    refspec: master
     layers:
       meta:
       meta-poky:
@@ -23,6 +23,8 @@ bblayers_conf_header:
     BBPATH = "${TOPDIR}"
     BBFILES ?= ""
 local_conf_header:
+  reduce_diskspace: |
+    INHERIT += "rm_work_and_downloads"
   standard: |
     CONF_VERSION = "1"
     PACKAGE_CLASSES = "package_rpm"
