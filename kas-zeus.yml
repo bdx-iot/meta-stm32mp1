@@ -11,7 +11,7 @@ repos:
 
   poky:
     url: https://git.yoctoproject.org/git/poky
-    refspec: master
+    refspec: zeus
     layers:
       meta:
       meta-poky:
