@@ -1,0 +1,50 @@
+header:
+  version: 2
+
+machine: stm32mp157a-dk1
+distro: poky
+target:
+  - core-image-rorootfs-overlay-initramfs
+
+repos:
+  meta-stm32mp1:
+
+  poky:
+    url: https://git.yoctoproject.org/git/poky
+    refspec: master
+    layers:
+      meta:
+      meta-poky:
+      meta-yocto-bsp:
+      
+  meta-readonly-rootfs-overlay:
+    url: https://github.com/texierp/meta-readonly-rootfs-overlay
+    refspec: topic/layer-compat
+
+bblayers_conf_header:
+  standard: |
+    POKY_BBLAYERS_CONF_VERSION = "2"
+    BBPATH = "${TOPDIR}"
+    BBFILES ?= ""
+local_conf_header:
+  reduce_diskspace: |
+    INHERIT += "rm_work_and_downloads"
+  standard: |
+    CONF_VERSION = "1"
+    PACKAGE_CLASSES = "package_rpm"
+    SDKMACHINE = "x86_64"
+    USER_CLASSES = "buildstats image-mklibs image-prelink"
+    PATCHRESOLVE = "noop"
+    INHERIT += "rm_work"
+  debug-tweaks: |
+    EXTRA_IMAGE_FEATURES = "debug-tweaks"
+  diskmon: |
+    BB_DISKMON_DIRS = "\
+        STOPTASKS,${TMPDIR},1G,100K \
+        STOPTASKS,${DL_DIR},1G,100K \
+        STOPTASKS,${SSTATE_DIR},1G,100K \
+        STOPTASKS,/tmp,100M,100K \
+        ABORT,${TMPDIR},100M,1K \
+        ABORT,${DL_DIR},100M,1K \
+        ABORT,${SSTATE_DIR},100M,1K \
+        ABORT,/tmp,10M,1K"
