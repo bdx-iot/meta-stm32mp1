@@ -19,6 +19,8 @@ SRC_URI = " \
 "
 
 S = "${WORKDIR}/git"
+B = "${WORKDIR}/build"
+do_configure[cleandirs] = "${B}"
 
 UBOOT_MAKE_TARGET_append = " u-boot-initial-env"
 

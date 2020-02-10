@@ -1,4 +1,4 @@
-require recipes-kernel/linux/linux-mainline-common.inc
+require linux-mainline-common.inc
 
 LINUX_VERSION ?= "5.5.x"
 KERNEL_VERSION_SANITY_SKIP="1"
