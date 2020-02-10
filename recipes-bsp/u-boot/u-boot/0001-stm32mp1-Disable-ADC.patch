@@ -1,16 +1,16 @@
-From ed4ac631b4b498c3cd27cc9b3d8601b9ade8bee7 Mon Sep 17 00:00:00 2001
-From: Pierre-Jean Texier <pjtexier@koncepto.io>
-Date: Thu, 3 Oct 2019 21:29:54 +0200
-Subject: [PATCH] stm32mp1: Disable ADC
+From 6549afce14cfb2d99aa6227752ed1180197a8282 Mon Sep 17 00:00:00 2001
+From: Joris Offouga <offougajoris@gmail.com>
+Date: Mon, 10 Feb 2020 23:59:49 +0100
+Subject: [PATCH 1/2] stm32mp1: Disable ADC
 
-Signed-off-by: Joris Offouga <offougajoris@gmail.com>
 Signed-off-by: Pierre-Jean Texier <pjtexier@koncepto.io>
+Signed-off-by: Joris Offouga <offougajoris@gmail.com>
 ---
  configs/stm32mp15_basic_defconfig | 3 +--
  1 file changed, 1 insertion(+), 2 deletions(-)
 
 diff --git a/configs/stm32mp15_basic_defconfig b/configs/stm32mp15_basic_defconfig
-index f6c68fe..bcc17a6 100644
+index 713a7e6c57..917078ffa6 100644
 --- a/configs/stm32mp15_basic_defconfig
 +++ b/configs/stm32mp15_basic_defconfig
 @@ -26,7 +26,6 @@ CONFIG_SYS_PROMPT="STM32MP> "
@@ -21,15 +21,15 @@ index f6c68fe..bcc17a6 100644
  CONFIG_CMD_CLK=y
  CONFIG_CMD_DFU=y
  CONFIG_CMD_FUSE=y
-@@ -61,7 +60,6 @@ CONFIG_ENV_EXT4_FILE="/uboot.env"
- CONFIG_ENV_UBI_PART="UBI"
+@@ -64,7 +63,6 @@ CONFIG_ENV_UBI_PART="UBI"
  CONFIG_ENV_UBI_VOLUME="uboot_config"
  CONFIG_ENV_UBI_VOLUME_REDUND="uboot_config_r"
+ CONFIG_SYS_RELOC_GD_ENV_ADDR=y
 -CONFIG_STM32_ADC=y
- CONFIG_USB_FUNCTION_FASTBOOT=y
- CONFIG_FASTBOOT_BUF_ADDR=0xC0000000
- CONFIG_FASTBOOT_BUF_SIZE=0x02000000
-@@ -100,6 +98,7 @@ CONFIG_PINCTRL_STMFX=y
+ CONFIG_DFU_MMC=y
+ CONFIG_DFU_RAM=y
+ CONFIG_DFU_MTD=y
+@@ -109,6 +107,7 @@ CONFIG_PINCTRL_STMFX=y
  CONFIG_DM_PMIC=y
  # CONFIG_SPL_PMIC_CHILDREN is not set
  CONFIG_PMIC_STPMIC1=y
@@ -37,6 +37,6 @@ index f6c68fe..bcc17a6 100644
  CONFIG_DM_REGULATOR_FIXED=y
  CONFIG_DM_REGULATOR_GPIO=y
  CONFIG_DM_REGULATOR_STM32_VREFBUF=y
--- 
-2.7.4
+--
+2.20.1
 

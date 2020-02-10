@@ -4,7 +4,6 @@ DEFAULTTUNE = "cortexa7thf-neon-vfpv4"
 
 SOC_FAMILY = "stm32mp1"
 
-PREFERRED_PROVIDER_virtual/bootloader ??= "u-boot-mainline"
 PREFERRED_PROVIDER_virtual/kernel ??= "linux-mainline"
 
 UBOOT_SUFFIX = "img"

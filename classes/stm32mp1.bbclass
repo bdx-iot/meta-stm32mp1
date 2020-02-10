@@ -16,7 +16,7 @@ DISTRO_FEATURES_remove = " \
 "
 
 IMAGE_INSTALL_append = " \
-	i2c-tools u-boot-mainline-initial-env openssh-sftp-server \
+	i2c-tools u-boot-initial-env openssh-sftp-server \
 "
 
 IMAGE_FEATURES_append = " \
