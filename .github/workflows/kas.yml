@@ -23,3 +23,7 @@ jobs:
         sudo pip3 install kas
     - name: Run kas on ${{ matrix.yocto-version }}
       run: kas build kas-${{ matrix.yocto-version }}.yml
+    - uses: actions/upload-artifact@v1
+      with:
+        name: stm32mp1-poky-image
+        path: build/tmp/deploy/images/stm32mp157a-dk1/
