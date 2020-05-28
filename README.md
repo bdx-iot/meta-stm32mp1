@@ -1,7 +1,7 @@
 OpenEmbedded BSP layer for stm32mp1 boards
 ==========================================
 
-[![Build Status](https://github.com/bdx-iot/meta-stm32mp1/workflows/CI/badge.svg)](https://github.com/bdx-iot/meta-stm32mp1/actions)
+[![Build Status](http://51.75.135.20:8080/job/swupdate-dev/badge/icon)](http://51.75.135.20:8080/job/stm32mp1/)
 
 About:
 -----
