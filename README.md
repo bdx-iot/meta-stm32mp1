@@ -19,6 +19,7 @@ Status of supported boards:
 builds and boots gpt image:
 
 	stm32mp157a-dk1
+	stm32mp157c-dk2
 
 Maintenance:
 -----------

@@ -1,7 +1,6 @@
 header:
   version: 2
 
-machine: stm32mp157a-dk1
 distro: poky
 target:
   - core-image-base

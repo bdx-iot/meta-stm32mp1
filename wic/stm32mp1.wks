@@ -1,5 +1,5 @@
-# short-description: Create SD card image for stm32mp157a-dk1
-# long-description: Creates a partitioned SD card image for stm32mp157a-dk1.
+# short-description: Create SD card image for stm32mp1
+# long-description: Creates a partitioned SD card image for stm32mp1.
 
 part fsbl1 --source rawcopy --sourceparams="file=u-boot-spl.stm32" --ondisk mmcblk --align 1 --size 256k --part-name fsbl1
 part fsbl2 --source rawcopy --sourceparams="file=u-boot-spl.stm32" --ondisk mmcblk --align 1 --size 256k --part-name fsbl2
