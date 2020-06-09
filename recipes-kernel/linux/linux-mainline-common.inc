@@ -12,4 +12,4 @@ PV = "${LINUX_VERSION}+git${SRCPV}"
 
 KCONFIG_MODE="--alldefconfig"
 KBUILD_DEFCONFIG = "multi_v7_defconfig"
-COMPATIBLE_MACHINE = "(stm32mp157a-dk1)"
+COMPATIBLE_MACHINE = "(stm32mp1)"
