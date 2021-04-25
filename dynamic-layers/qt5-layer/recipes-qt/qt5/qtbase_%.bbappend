@@ -1,3 +1,3 @@
 
-PACKAGECONFIG_append = " examples libinput linuxfb fontconfig sql-sqlite no-opengl"
-PACKAGECONFIG_remove = "icu tests gl gles2 eglfs"
+PACKAGECONFIG_append_stm32mp1 = " examples libinput linuxfb fontconfig sql-sqlite gl gles2 eglfs"
+
