@@ -38,5 +38,5 @@ follow-up discussions please use the GitHub's notification system.
 
 Maintainers:
 -----------
-	Pierre-Jean Texier <pjtexier@koncepto.io>
+	Pierre-Jean Texier <texier.pj2@gmail.com>
 	Joris Offouga <offougajoris@gmail.com>
