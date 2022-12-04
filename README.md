@@ -1,8 +1,6 @@
 OpenEmbedded BSP layer for stm32mp1 boards
 ==========================================
 
-[![Build Status](http://51.75.135.20:8080/job/swupdate-dev/badge/icon)](http://51.75.135.20:8080/job/stm32mp1/)
-
 About:
 -----
 The purpose of this layer is to provide OpenEmbedded BSP support for
@@ -38,5 +36,5 @@ follow-up discussions please use the GitHub's notification system.
 
 Maintainers:
 -----------
-	Pierre-Jean Texier <pjtexier@koncepto.io>
+	Pierre-Jean Texier <texier.pj2@gmail.com>
 	Joris Offouga <offougajoris@gmail.com>

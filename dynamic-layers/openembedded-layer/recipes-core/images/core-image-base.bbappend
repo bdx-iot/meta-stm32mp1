@@ -1,3 +1,3 @@
-IMAGE_INSTALL_append = " \
+IMAGE_INSTALL:append = " \
 	libgpiod spitools \
 "
