@@ -2,9 +2,9 @@
 VIRTUAL-RUNTIME_init_manager = "systemd"
 DISTRO_FEATURES_BACKFILL_CONSIDERED = "sysvinit"
 VIRTUAL-RUNTIME_initscripts = ""
-DISTRO_FEATURES_append = " systemd"
+DISTRO_FEATURES:append = " systemd"
 
-DISTRO_FEATURES_remove = " \
+DISTRO_FEATURES:remove = " \
 	wayland \
 	irda \
 	ppp \
@@ -15,10 +15,10 @@ DISTRO_FEATURES_remove = " \
 	nfc \
 "
 
-IMAGE_INSTALL_append = " \
+IMAGE_INSTALL:append = " \
 	i2c-tools u-boot-env openssh-sftp-server \
 "
 
-IMAGE_FEATURES_append = " \
+IMAGE_FEATURES:append = " \
 	ssh-server-dropbear \
 "

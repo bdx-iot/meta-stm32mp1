@@ -1,9 +1,9 @@
 inherit populate_sdk_qt5
 
-DISTRO_FEATURES_remove = "wayland"
-DISTRO_FEATURES_append = " opengl"
+DISTRO_FEATURES:remove = "wayland"
+DISTRO_FEATURES:append = " opengl"
 
-IMAGE_INSTALL_append = " \
+IMAGE_INSTALL:append = " \
 	packagegroup-qt5 \
 	liberation-fonts \
 "

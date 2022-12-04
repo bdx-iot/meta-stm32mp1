@@ -1,4 +1,5 @@
 require conf/machine/include/soc-family.inc
+include conf/machine/include/arm/armv7a/tune-cortexa7.inc
 
 DEFAULTTUNE = "cortexa7thf-neon-vfpv4"
 
@@ -18,7 +19,7 @@ KERNEL_IMAGETYPE ?= "zImage"
 WIC_CREATE_EXTRA_ARGS ?= "--no-fstab-update"
 
 # Image
-IMAGE_FSTYPES += "tar.bz2 wic wic.gz wic.bmap ext4 ext4.gz"
+IMAGE_FSTYPES:append = " tar.bz2 wic wic.gz wic.bmap ext4 ext4.gz"
 
 WKS_FILE_DEPENDS ?= " \
     virtual/bootloader \
@@ -28,8 +29,3 @@ WKS_FILE_DEPENDS ?= " \
 
 # Wic default support
 WKS_FILE ?= "stm32mp1.wks"
-
-# Define specific EXT4 command line:
-#   - Create minimal inode number (as it is done by default in image_types.bbclass)
-#   - Deactivate metadata_csum not supported by U-Boot
-EXTRA_IMAGECMD_ext4 = "-i 4096 -O ^metadata_csum"
