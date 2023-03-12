@@ -1,0 +1,41 @@
+header:
+  version: 8
+  includes:
+    - kas-master.yml
+
+machine: stm32mp15-disco
+repos:
+
+  meta-st-stm32mp:
+    url: https://github.com/STMicroelectronics/meta-st-stm32mp
+    refspec: ca501bd7dbe023682903ceedddaacd940b0898f4
+
+  meta-openembedded:
+    url: http://git.openembedded.org/meta-openembedded
+    refspec: 82c75b466e55d7dca7a2364986ecb704cf63d141
+    layers:
+      meta-oe:
+      meta-python:
+      meta-networking:
+
+local_conf_header:
+  meta-st-stm32mp: |
+    INHERIT:append = " stm32mp1"
+
+    STM32MP_DT_FILES_DK = "stm32mp157c-dk2"
+    KERNEL_DEVICETREE = "stm32mp157c-dk2.dtb"
+    WKS_IMAGE_FSTYPES:append = " wic wic.gz wic.bmap"
+    WKS_FILE:append = " stm32mp1-st.wks"
+    UBOOT_EXTLINUX = "1"
+    UBOOT_EXTLINUX_ROOT = "root=/dev/mmcblk0p7"
+    UBOOT_EXTLINUX_FDTDIR = "../"
+    ENABLE_FLASHLAYOUT_CONFIG = "0"
+    IMAGE_CLASSES:remove = "st-partitions-image"
+    WKS_FILE_DEPENDS:remove = "st-image-bootfs st-image-vendorfs st-image-userfs"
+    MACHINE_ESSENTIAL_EXTRA_RDEPENDS:append = " \
+        kernel-image \
+        kernel-modules \
+        u-boot-stm32mp-extlinux \
+    "
+    IMAGE_CLASSES:remove = "image_types-stubi"
+    IMAGE_INSTALL:remove = "u-boot-env"
