@@ -10,7 +10,7 @@ repos:
 
   poky:
     url: https://git.yoctoproject.org/git/poky
-    refspec: kirkstone
+    refspec: 30656ea54de82cabb818f07af711b96211421c95
     layers:
       meta:
       meta-poky:
@@ -23,12 +23,12 @@ bblayers_conf_header:
     BBFILES ?= ""
 local_conf_header:
   reduce_diskspace: |
-    INHERIT += "rm_work_and_downloads"
+    INHERIT:append = " rm_work_and_downloads"
   standard: |
-    CONF_VERSION = "1"
+    CONF_VERSION = "2"
     PACKAGE_CLASSES = "package_rpm"
     SDKMACHINE = "x86_64"
-    USER_CLASSES = "buildstats image-mklibs image-prelink"
+    USER_CLASSES = "buildstats"
     PATCHRESOLVE = "noop"
   debug-tweaks: |
     EXTRA_IMAGE_FEATURES = "debug-tweaks"
@@ -38,7 +38,7 @@ local_conf_header:
         STOPTASKS,${DL_DIR},1G,100K \
         STOPTASKS,${SSTATE_DIR},1G,100K \
         STOPTASKS,/tmp,100M,100K \
-        ABORT,${TMPDIR},100M,1K \
-        ABORT,${DL_DIR},100M,1K \
-        ABORT,${SSTATE_DIR},100M,1K \
-        ABORT,/tmp,10M,1K"
+        HALT,${TMPDIR},100M,1K \
+        HALT,${DL_DIR},100M,1K \
+        HALT,${SSTATE_DIR},100M,1K \
+        HALT,/tmp,10M,1K"

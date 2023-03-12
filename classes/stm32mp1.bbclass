@@ -20,5 +20,5 @@ IMAGE_INSTALL:append = " \
 "
 
 IMAGE_FEATURES:append = " \
-	ssh-server-dropbear \
+	ssh-server-openssh \
 "
